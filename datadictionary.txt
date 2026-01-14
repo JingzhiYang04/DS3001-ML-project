@@ -1,0 +1,19 @@
+inspection_id : Unique identifier for each inspection event
+inspection_date : Calendar date of the inspection (Date format)
+facility_type : Type of establishment (e.g., restaurant, grocery store, school)
+risk : City-defined risk level (Risk 1 = High, Risk 2 = Medium, Risk 3 = Low)
+inspection_type : Reason or program for the inspection (e.g., canvass, complaint, license, re-inspection)
+zip : Five-digit ZIP code of the facility location
+city : City name (mostly “Chicago”; used to flag anomalies)
+latitude : Latitude coordinate of the facility
+longitude : Longitude coordinate of the facility
+results : Official outcome of inspection (e.g., pass, pass w/ conditions, fail, out of business)
+violations : Free-text list of cited violations, often numbered (“1. … 2. …”)
+
+## Engineered Features
+viol_count : Count of numbered violations extracted from violations text
+risk_ord   : Ordinal encoding of risk (High = 3, Medium = 2, Low = 1)
+ins_year   : Year extracted from inspection_date
+ins_month  : Month extracted from inspection_date
+ins_wday   : Weekday extracted from inspection_date
+target_fail: Binary target where 1 indicates inspection result is "fail"
